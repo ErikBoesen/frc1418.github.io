@@ -296,76 +296,86 @@ footer ul
   width: 50px
   margin-top: 10px
 
-@media (max-width: 1200px)
-  #nav-button
-    display: block
-  nav
-    top: 0
+#nav-button
+  display: block
+
+nav
+  top: 0
+  margin: 0
+  right: -120vw
+  background: $grey
+  width: 100vw
+  height: 100vh
+  position: fixed
+  overflow: scroll
+  transition: .2s
+  &.open
+    right: 0
+    transition: .3s
+  > ul
     margin: 0
-    right: -120vw
-    background: $grey
+    padding: 20px
+    right: auto
+    position: relative
     width: 100vw
     height: 100vh
-    position: fixed
-    overflow: scroll
-    transition: .2s
-    &.open
-      right: 0
-      transition: .3s
-    > ul
-      margin: 0
-      padding: 20px
-      right: auto
-      position: relative
-      width: 100vw
-      height: 100vh
+  li
+    display: block
+    clear: both
+  ul ul
+    display: block
+    position: static
     li
-      display: block
-      clear: both
-    ul ul
-      display: block
-      position: static
-      li
-        margin-left: 20px
-        padding-left: 10px
-        border-left: solid 4px white
-    li:hover
+      margin-left: 20px
+      padding-left: 10px
+      border-left: solid 4px white
+  li:hover
+    background: $grey
+  a
+    font-size: 50px
+    display: inline-block
+    padding: 10px 0
+    vertical-align: middle
+    transform: translateZ(0)
+    position: relative
+    overflow: hidden
+  .active
+    background: $grey
+    &:hover
       background: $grey
     a
-      font-size: 50px
-      display: inline-block
-      padding: 10px 0
-      vertical-align: middle
-      transform: translateZ(0)
-      position: relative
-      overflow: hidden
-    .active
-      background: $grey
-      &:hover
-        background: $grey
-      a
-        color: white
-    a
-      &:after
-        content: ''
-        position: absolute
-        right: 100%
-        left: 0
-        bottom: 0
-        background: white
-        height: 4px
-        transition: .3s ease-out
-      &:hover:after, &:focus:after, &:active:after
-        right: 0
-    .active > a:after
+      color: white
+  a
+    &:after
+      content: ''
+      position: absolute
+      right: 100%
+      left: 0
+      bottom: 0
+      background: white
+      height: 4px
+      transition: .3s ease-out
+    &:hover:after, &:focus:after, &:active:after
       right: 0
-    > ul > li:last-child ul
-      margin-left: 0
-  article img
-    width: 100%
-  footer
-    h5, table
-      display: none
+  .active > a:after
+    right: 0
+  > ul > li:last-child ul
+    margin-left: 0
+
+.nav-hero
+  height: 100vh
+  position: fixed
+  right: 0
+  z-index: 198
+
+.nav-hero-gradient
+  height: 100vh
+  width: 70vw
+  position: fixed
+  right: 0
+  z-index: 199
+  background: linear-gradient(to right, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0))
+
 
 @media (max-width: 850px)
   header
